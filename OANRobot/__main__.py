@@ -4,7 +4,7 @@ import re
 from sys import argv
 from typing import Optional
 
-from YoneRobot import (
+from OANRobot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -25,9 +25,9 @@ from YoneRobot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from YoneRobot.modules import ALL_MODULES
-from YoneRobot.modules.helper_funcs.chat_status import is_user_admin
-from YoneRobot.modules.helper_funcs.misc import paginate_modules
+from OANRobot.modules import ALL_MODULES
+from OANRobot.modules.helper_funcs.chat_status import is_user_admin
+from OANRobot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -74,8 +74,15 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-ʜᴇʟʟᴏ [🤗](https://telegra.ph/file/b69745edc110a76387855-d46dc515d1eceb7378.jpg), ɪᴍ 𝐂𝐚𝐩𝐭𝐚𝐢𝐧 ᴀ ʜɪɢʜʏ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ʟᴏᴛꜱ ᴏꜰ ᴀᴍᴀᴢɪɴɢ ᴛᴏᴏʟꜱ.
-`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help   
+ʜᴇʟʟᴏ [🤗](https://telegra.ph/file/0ddd19a57f6297b6a2a6d.jpg), ɪᴍ 𝐂𝐚𝐩𝐭𝐚𝐢𝐧 ᴀ ʜɪɢʜʏ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ʟᴏᴛꜱ ᴏꜰ ᴀᴍᴀᴢɪɴɢ ᴛᴏᴏʟꜱ.
+`ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ! ʜɪᴛ` /help 
+**━━━━━━━━━━━━━━━━━━━━━━━━**
+┏━━━━━━━━━━━━━━━━━┓
+┣★ ⚡𝗖𝗵𝗮𝗻𝗻𝗲𝗹⚡ : [🔥🥂𝐀𝐭𝐭𝐢𝐭𝐮𝐝𝐞 𝐍𝐞𝐭𝐰𝐨𝐫𝐤🥂🔥](Https://t.me/Attitude_Network)
+┣★ ⚡𝗦𝘂𝗽𝗽𝗼𝗿𝘁⚡ : [🔱🥂𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐀𝐭𝐭𝐢𝐭𝐮𝐝𝐞 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 🥂🔱](https://t.me/OAN_Support)
+┣★ ⚡𝗢𝘄𝗻𝗲𝗿⚡  : [👑🥂 𝐀𝐭𝐭𝐢𝐭𝐮𝐝𝐞 𝐊𝐢𝐧𝐠🥂👑](Https://t.me/Alone_Shaurya_king)
+┗━━━━━━━━━━━━━━━━━┛
+**━━━━━━━━━━━━━━━━━━━━━━━━**  
 """
 
 buttons = [
@@ -96,10 +103,10 @@ buttons = [
 
 
 HELP_STRINGS = """
-`ʜɪ.. ɪ'ᴍ` [𝐂𝐚𝐩𝐭𝐚𝐢𝐧🙋‍♀️](https://telegra.ph/file/b69745edc110a76387855-d46dc515d1eceb7378.jpg) 
+`ʜɪ.. ɪ'ᴍ` [𝐂𝐚𝐩𝐭𝐚𝐢𝐧🙋‍♀️](https://telegra.ph/file/0ddd19a57f6297b6a2a6d.jpg) 
 `ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ.....`"""
 
-yone_IMG = "https://telegra.ph/file/b69745edc110a76387855-d46dc515d1eceb7378.jpg"
+yone_IMG = "https://telegra.ph/file/0ddd19a57f6297b6a2a6d.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paypal](#) or by contacting @Alone_Shaurya_king \
