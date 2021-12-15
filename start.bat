@@ -1,4 +1,4 @@
 @echo off
-TITLE Yone Robot
+TITLE OAN Robot
 :: Enables virtual env mode and then starts Rika
-env\scripts\activate.bat && py -m YoneRobot
+env\scripts\activate.bat && py -m OANRobot
