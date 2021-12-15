@@ -66,9 +66,9 @@ RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/OANRobot
 RUN git clone -b shiken https://github.com/ItsAttitudeking/OANRobot /root/OANRobot
-WORKDIR /root/YoneRobot
+WORKDIR /root/OANRobot
 
-#Copy config file to /root/YoneRobot/YoneRobot
+#Copy config file to /root/OANRobot/OANRobot
 COPY ./OANRobot/sample_config.py ./OANRobot/config.py* /root/OANRobot/OANRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
