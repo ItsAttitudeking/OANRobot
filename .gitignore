@@ -1,15 +1,15 @@
 # Config files, logs and stuff
-YoneRobot/modules/helper_funcs/temp.txt
-YoneRobot/elevated_users.json
-YoneRobot/config.py
-YoneRobot/config.ini
+OANRobot/modules/helper_funcs/temp.txt
+OANRobot/elevated_users.json
+OANRobot/config.py
+OANRobot/config.ini
 log.txt
 kangsticker.png
 updates.txt
 
 # Session files
-YoneRobot/*.session
-YoneRobot/*.session-journal
+OANRobot/*.session
+OANRobot/*.session-journal
 Masha.session-journal
 *.session
 
