@@ -1,3 +1,18 @@
+# Config files, logs and stuff
+YoneRobot/modules/helper_funcs/temp.txt
+YoneRobot/elevated_users.json
+YoneRobot/config.py
+YoneRobot/config.ini
+log.txt
+kangsticker.png
+updates.txt
+
+# Session files
+YoneRobot/*.session
+YoneRobot/*.session-journal
+Masha.session-journal
+*.session
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +142,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VS code and shit
+*.pyc
+.idea/
+.project
+.pydevproject
+.directory
+.vscode
