@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/YoneRobot
-RUN git clone -b shiken https://github.com/noob-kittu/YoneRobot /root/YoneRobot
+# Copy Python Requirements to /root/OANRobot
+RUN git clone -b shiken https://github.com/ItsAttitudeking/OANRobot /root/OANRobot
 WORKDIR /root/YoneRobot
 
 #Copy config file to /root/YoneRobot/YoneRobot
-COPY ./YoneRobot/sample_config.py ./YoneRobot/config.py* /root/YoneRobot/YoneRobot/
+COPY ./OANRobot/sample_config.py ./OANRobot/config.py* /root/OANRobot/OANRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,4 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","YoneRobot"]
+CMD ["python3","-m","OANRobot"]
