@@ -36,7 +36,7 @@ async def Prof(event):
         await event.reply("No File Found!")
 
 
-from YoneRobot.events import load_module
+from OANRobot.events import load_module
 import asyncio
 import os
 from datetime import datetime
