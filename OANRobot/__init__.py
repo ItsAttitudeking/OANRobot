@@ -100,7 +100,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from YoneRobot.config import Development as Config
+    from OANRobot.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -199,7 +199,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from YoneRobot.modules.helper_funcs.handlers import (
+from OANRobot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
