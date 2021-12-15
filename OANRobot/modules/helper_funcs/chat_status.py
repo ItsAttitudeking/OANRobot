@@ -402,6 +402,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from YoneRobot.modules import connection
+from OANRobot.modules import connection
 
 connected = connection.connected
